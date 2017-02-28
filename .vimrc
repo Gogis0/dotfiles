@@ -28,6 +28,20 @@ set textwidth=100
 
 " my terminal is dark, use an appropriate colorscheme
 set background=dark
+
+" 256 colorz plz
+set t_Co=256
+
+" my currently favorite colorscheme
+colorscheme molokai
+
+" disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+" see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+if &term =~ '256color'
+  set t_ut=
+endif
+
 " use the following to force black background if necessary:
 " highlight Normal guibg=black guifg=white ctermbg=black ctermfg=white 
 
