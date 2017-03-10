@@ -5,8 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source ./aliases.sh
-source ./functions.sh
+# symlink the good stuff to ~/
+for file in ~/.{aliases,functions}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
 
 # remove duplicate path entries and preserve PATH order
 export PATH
