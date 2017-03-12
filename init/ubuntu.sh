@@ -1,4 +1,4 @@
-# Abort if not Ubuntu
+# This is distro-specific stuff, so abort if not run under Ubuntu
 [[ "$(cat /etc/*-release 2> /dev/null)" =~ Ubuntu ]] || return 1
 
 # Update APT
@@ -15,7 +15,7 @@ packages=(
     htop
 )
 
-# Check whether the packages are already installed
+# Check which of the packages are already installed
 list=()
 for package in "${packages[@]}"; do
     if [[ ! "$(dpkg -l "$package" 2>/dev/null | grep "^ii  $package")"  ]]; then
@@ -23,6 +23,7 @@ for package in "${packages[@]}"; do
     fi
 done
 
+# Install the rest
 if (( ${#list[@]} > 0 )); then
     for package in "${list[@]}"; do
         sudo apt-get -qq -y install $package
