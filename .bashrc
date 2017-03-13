@@ -18,4 +18,4 @@ PATH=$(echo "$PATH" | awk -F: '
 END { printf "\n"; } ')
 
 prompt_old='[\u@\h \W]\$ '
-PS1='[\e[0;32m\u@\h \W\[\e[m]$\[\e[m\] '
+PS1='[\e[0;32m\u@\h \W\[\e[m]$ '
