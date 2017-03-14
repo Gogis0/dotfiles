@@ -1,3 +1,4 @@
+#!/bin/bash
 # cd and ls in one command!
 function cl() { cd "$@" && la; }
 
