@@ -17,5 +17,5 @@ PATH=$(echo "$PATH" | awk -F: '
 { start=0; for (i = 1; i <= NF; i++) if (!($i in arr) && $i) {if (start!=0) printf ":";start=1; printf "%s", $i;arr[$i]}; }
 END { printf "\n"; } ')
 
-prompt_old='[\u@\h \W]\$ '
-PS1='[\e[0;32m\u@\h \W\[\e[m]$ '
+# set the prompt
+. ./.bash_prompt
