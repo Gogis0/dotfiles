@@ -32,12 +32,6 @@ BGWHITE='\[\e[1;37m\]'
 PROMPT_COMMAND=smile_prompt
 
 function smile_prompt {
-    if [ -n "$VIRTUAL_ENV" ]; then
-        VENV="(`basename \"$VIRTUAL_ENV\"`) "
-    else
-        VENV=""
-    fi
-
     if [ "$?" -eq "0" ]; then 
         #smiley
         SC="${GREEN}:)"
@@ -52,6 +46,12 @@ function smile_prompt {
     else
         #normal user color
         UC="${BWHITE}"
+    fi
+
+    if [ -n "$VIRTUAL_ENV" ]; then
+        VENV="(`basename \"$VIRTUAL_ENV\"`) "
+    else
+        VENV=""
     fi
 
     #hostname color
