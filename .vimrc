@@ -33,7 +33,7 @@ set background=dark
 set t_Co=256
 
 " my currently favorite colorscheme
-colorscheme molokai
+colorscheme jellybeans
 
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
